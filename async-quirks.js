@@ -6,3 +6,5 @@ async function increment() {
 increment();
 num += 1;
 console.log(num);
+increment();
+console.log('last', num);

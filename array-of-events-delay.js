@@ -1,4 +1,6 @@
-/* Given an array of events, where each event is represented as an object with two properties: label (a string) and delay (a time to wait in ms), print to the console/terminal the label of each event in sequential order, with each event delayed by the specified time.
+/* Given an array of events, where each event is represented as an object with two properties: 
+label (a string) and delay (a time to wait in ms), print to the console/terminal the label of each event 
+in sequential order, with each event delayed by the specified time.
 
 ...wait 2 seconds...
 a
@@ -46,7 +48,8 @@ const solveUsingSetTimeout = (events) => {
     if (i === events.length) return;
   
     // recursive step
-    // we'll call setTimeout in a callback that console.logs the label, then recursively calls setTimeout
+    // we'll call setTimeout in a callback that console.logs the label, 
+    // then recursively calls setTimeout
     // wait event[i].delay of time
 
     const currEvent = events[i];
@@ -70,8 +73,10 @@ const solveUsingSetTimeout = (events) => {
 
 
 
-
+// helper function
 const promiseToExecuteEvent = (event) => {
+  // we are wrapping our setTimeout in a Promise
+  // no need for reject in this instance so we don't need to include it as a parameter
   return new Promise((resolve) => {
     setTimeout(() => {
       console.log(event.label);
@@ -87,14 +92,6 @@ const solveWithAsyncAwait = async (events) => {
 }
 
 solveWithAsyncAwait(events);
-
-
-
-
-
-
-
-
 
 
 
